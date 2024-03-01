@@ -70,7 +70,7 @@ function BookingRow({
         <span className="font-medium">
           {startDate && isToday(new Date(startDate))
             ? 'Today'
-            : formatDistanceFromNow(startDate)}{' '}
+            : formatDistanceFromNow(startDate as string)}{' '}
           &rarr; {numNights} night stay
         </span>
         <span className="text-xl text-text_gray_color">
@@ -88,7 +88,7 @@ function BookingRow({
         {status?.replace('-', ' ')}
       </span>
 
-      <div className="font-sono font-medium">{formatCurrency(totalPrice)}</div>
+      <div className="font-sono font-medium">{formatCurrency(totalPrice as number)}</div>
 
       <Modal>
         <Menus.Menu>

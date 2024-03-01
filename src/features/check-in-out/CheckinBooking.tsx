@@ -109,7 +109,8 @@ function CheckinBooking() {
             }}
             id="breakfast"
           >
-            Want to add breakfast for {formatCurrency(optionalBreakfastPrice)}?
+            Want to add breakfast for{' '}
+            {formatCurrency(optionalBreakfastPrice as number)}?
           </Checkbox>
         </div>
       )}
@@ -123,11 +124,11 @@ function CheckinBooking() {
         >
           I confirm that {guests?.fullName} has paid the total amount of{' '}
           {!addBreakfast
-            ? formatCurrency(totalPrice)
+            ? formatCurrency(totalPrice as number)
             : `${formatCurrency(
                 totalPrice! + optionalBreakfastPrice!,
-              )} (${formatCurrency(totalPrice)} + ${formatCurrency(
-                optionalBreakfastPrice,
+              )} (${formatCurrency(totalPrice as number)} + ${formatCurrency(
+                optionalBreakfastPrice as number,
               )})`}
         </Checkbox>
       </div>
