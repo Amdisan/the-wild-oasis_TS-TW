@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-md border bg-white px-5 py-3 text-gray-900 shadow-sm dark:border-none;
+  }
+  .form {
+    @apply rounded-lg border border-gray-100 bg-white px-16 py-10 dark:border-slate-800 dark:bg-slate-800;
+  }
+  .h1 {
+    @apply text-5xl font-semibold text-text_color;
+  }
+  .h2 {
+    @apply text-4xl font-semibold text-text_color;
+  }
+  .h3 {
+    @apply text-3xl font-medium text-text_color;
+  }
+  .h4 {
+    @apply text-center text-5xl font-semibold text-text_color;
+  }
+}
+
+:root {
+  --primary-color: theme(colors.white);
+  --secondary-color: theme(colors.gray.100);
+  --danger-primary-color: theme(colors.red.700);
+  --danger-secondary-color: theme(colors.red.600);
+  --danger-text-prime-color: theme(colors.red.100);
+  --danger-text-second-color: theme(colors.white);
+  --brand-bg-color: theme(colors.indigo.500);
+  --brand-bg-hover-color: theme(colors.indigo.400);
+  --brand-text-color: theme(colors.indigo.50);
+  --unconfirmed-text-color: theme(colors.sky.700);
+  --unconfirmed-bg-color: theme(colors.sky.100);
+  --checked_in-text-color: theme(colors.emerald.700);
+  --checked_in-bg-color: theme(colors.emerald.100);
+  --checked_out-text-color: theme(colors.slate.700);
+  --checked_out-bg-color: theme(colors.slate.300);
+  --border-color: theme(colors.gray.200);
+  --border-second-color: theme(colors.slate.300);
+  --text-color: theme(colors.gray.800);
+  --text-gray-color: theme(colors.gray.500);
+}
+
+.dark {
+  --primary-color: theme(colors.slate.800);
+  --secondary-color: theme(colors.slate.900);
+  --danger-primary-color: theme(colors.red.600);
+  --danger-secondary-color: theme(colors.red.700);
+  --brand-bg-hover-color: theme(colors.indigo.600);
+  --unconfirmed-text-color: theme(colors.sky.100);
+  --unconfirmed-bg-color: theme(colors.sky.700);
+  --checked_in-text-color: theme(colors.emerald.100);
+  --checked_in-bg-color: theme(colors.emerald.700);
+  --checked_out-text-color: theme(colors.slate.100);
+  --checked_out-bg-color: theme(colors.slate.700);
+  --border-color: theme(colors.slate.500);
+  --border-second-color: theme(colors.slate.700);
+  --text-color: theme(colors.white);
+  --text-gray-color: theme(colors.gray.400);
+}
+
+*,
+*::before,
+*::after {
+  /* Creating animations for dark mode */
+  transition:
+    background-color 0.3s,
+    border 0.3s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  line-height: 1.5;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+*:disabled {
+  cursor: not-allowed;
+}
+
+button:has(svg) {
+  line-height: 0;
+}
+
+img {
+  max-width: 100%;
+
+  /* For dark mode */
+  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.bg-radial {
+  background:
+    radial-gradient(farthest-side, var(--brand-bg-color) 94%, #0000) top/10px
+      10px no-repeat,
+    conic-gradient(#0000 30%, var(--brand-bg-color));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0 !important;
+}
